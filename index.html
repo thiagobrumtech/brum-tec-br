@@ -1,114 +1,84 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Thiago Brum | Segurança de Dados</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: radial-gradient(circle at top, #0f172a, #020617);
-      color: #e2e8f0;
-      text-align: center;
-      overflow-x: hidden;
-    }
-
-    .container {
-      padding: 80px 20px;
-    }
-
-    h1 {
-      font-size: 3em;
-      color: #38bdf8;
-      text-shadow: 0 0 10px #38bdf8, 0 0 20px #0ea5e9;
-    }
-
-    .subtitle {
-      font-size: 1.2em;
-      color: #94a3b8;
-      margin-bottom: 20px;
-    }
-
-    .desc {
-      max-width: 600px;
-      margin: auto;
-      color: #cbd5f5;
-    }
-
-    .buttons {
-      margin-top: 30px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 14px 24px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, #0ea5e9, #2563eb);
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px #0ea5e9;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #38bdf8, 0 0 40px #0ea5e9;
-    }
-
-    .footer {
-      margin-top: 60px;
-      font-size: 0.9em;
-      color: #64748b;
-    }
-
-    /* Glow animation background */
-    body::before {
-      content: "";
-      position: fixed;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, #0ea5e9 0%, transparent 70%);
-      top: -200px;
-      left: -200px;
-      opacity: 0.15;
-      animation: moveGlow 10s infinite alternate;
-      z-index: -1;
-    }
-
-    @keyframes moveGlow {
-      from {
-        transform: translate(0, 0);
-      }
-      to {
-        transform: translate(200px, 200px);
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiago | Cyber Security & Data Protection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #050a10;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        .cyber-border {
+            position: relative;
+            padding: 4px;
+            background: linear-gradient(135deg, #0ea5e9, #22c55e);
+            border-radius: 50%;
+        }
+        .glow-button:hover {
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.6);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+    </style>
 </head>
+<body class="min-h-screen flex items-center justify-center p-6">
 
-<body>
-  <div class="container">
-    <h1>Thiago Brum</h1>
-
-    <div class="subtitle">
-      Especialista em Segurança de Dados | DLP | Microsoft Purview
+    <div class="fixed inset-0 z-[-1] opacity-20">
+        <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#0ea5e933_0%,transparent_50%)]"></div>
     </div>
 
-    <p class="desc">
-      Protegendo dados sensíveis e reduzindo riscos com estratégias modernas de Data Protection.
-    </p>
+    <main class="glass-card max-w-2xl w-full rounded-3xl p-8 md:p-12 text-center">
+        
+        <div class="flex justify-center mb-8">
+            <div class="cyber-border">
+                <div class="bg-[#050a10] rounded-full p-1">
+                    <img src="foto.png" alt="Perfil Thiago" class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-2 border-transparent">
+                </div>
+            </div>
+        </div>
 
-    <div class="buttons">
-      <a class="btn" href="https://www.linkedin.com/in/brum-thiago">LinkedIn</a>
-      <a class="btn" href="https://www.youtube.com/@dronedothi">YouTube</a>
-    </div>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-2">
+            Thiago <span class="text-sky-500">Brum</span>
+        </h1>
+        <p class="text-sky-400 font-mono text-sm md:text-base mb-6 uppercase tracking-widest">
+            [ Cyber Security Engineer | Data Protection ]
+        </p>
 
-    <div class="footer">
-      Atuando no setor financeiro
-    </div>
-  </div>
+        <p class="text-slate-400 leading-relaxed mb-10 text-sm md:text-lg">
+            Especialista focado em segurança ofensiva, mitigação de riscos e arquitetura de proteção de dados. Transformando vulnerabilidades em defesas resilientes.
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+            
+            <a href="https://www.linkedin.com/in/brum-thiago" target="_blank" 
+               class="glow-button flex items-center justify-center gap-2 bg-sky-600 hover:bg-sky-500 text-white font-semibold py-3 px-8 rounded-xl transition-all">
+                <i class="fab fa-linkedin-in"></i>
+                LinkedIn
+            </a>
+
+            <a href="mailto:thiago@brum.tec.br" 
+               class="glow-button flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 px-8 rounded-xl border border-slate-700 transition-all">
+                <i class="fas fa-envelope"></i>
+                Contato por E-mail
+            </a>
+
+        </div>
+
+        <footer class="mt-12 pt-8 border-t border-slate-800 text-xs text-slate-500 font-mono">
+            &copy; 2026 // SECURED_CONNECTION_ESTABLISHED // ENCRYPTED_PROFILE
+        </footer>
+
+    </main>
+
 </body>
 </html>
