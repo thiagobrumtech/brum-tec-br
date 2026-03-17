@@ -3,100 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thiago Brum | Cyber Security Specialist</title>
+    <title>Thiago Brum | Cyber Security Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --cyber-blue: #0ea5e9; --cyber-green: #22c55e; }
-        body { background-color: #020617; color: #f8fafc; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        :root { --cyber-blue: #0ea5e9; }
+        body { background-color: #020617; color: #f8fafc; font-family: 'Inter', sans-serif; position: relative; min-height: 100vh; overflow-x: hidden; }
         .font-mono { font-family: 'Fira Code', monospace; }
+        .glass { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(20px); border: 1px solid rgba(14, 165, 233, 0.2); }
+        .profile-ring { padding: 4px; background: linear-gradient(45deg, #0ea5e9, #6366f1); border-radius: 50%; }
         
-        .glass { 
-            background: rgba(15, 23, 42, 0.7); 
-            backdrop-filter: blur(16px); 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        /* Linha de Scan com Maior Destaque */
+        .scanline { 
+            width: 100%; 
+            height: 3px; 
+            background: linear-gradient(to right, transparent, #0ea5e9, transparent);
+            position: fixed; 
+            left: 0;
+            z-index: 50;
+            box-shadow: 0 0 15px #0ea5e9, 0 0 5px #fff;
+            opacity: 0.8;
+            pointer-events: none;
+            animation: scan 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
-
-        /* Removido o filtro de cor para manter a foto original */
-        .profile-ring {
-            padding: 4px;
-            background: linear-gradient(45deg, var(--cyber-blue), #6366f1);
-            border-radius: 50%;
+        @keyframes scan { 
+            0% { top: -5%; } 
+            100% { top: 105%; } 
         }
-
-        .scanline {
-            width: 100%; height: 2px;
-            background: rgba(14, 165, 233, 0.1);
-            position: absolute; animation: scan 4s linear infinite;
-        }
-        @keyframes scan { 0% { top: 0; } 100% { top: 100%; } }
-
-        .glow-text { text-shadow: 0 0 10px rgba(14, 165, 233, 0.5); }
     </style>
 </head>
-<body class="min-h-screen flex items-center justify-center py-10 px-4">
+<body class="flex items-center justify-center py-10 px-4">
 
-    <div class="fixed inset-0 z-0 opacity-30">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-    </div>
+    <div class="scanline"></div>
 
-    <div class="scanline z-10"></div>
-
-    <main class="glass max-w-4xl w-full rounded-2xl p-8 md:p-16 relative z-20">
+    <main class="glass max-w-4xl w-full rounded-2xl p-8 md:p-16 relative z-20 shadow-[0_0_50px_rgba(14,165,233,0.1)]">
         <div class="grid md:grid-cols-3 gap-12 items-center">
             
             <div class="flex flex-col items-center space-y-6">
-                <div class="profile-ring">
+                <div class="profile-ring shadow-[0_0_20px_rgba(14,165,233,0.3)]">
                     <div class="bg-[#020617] rounded-full p-1 overflow-hidden">
-                        <img src="foto.png" alt="Thiago Brum" class="w-32 h-32 md:w-44 md:h-44 rounded-full object-cover block">
+                        <img src="foto.png" alt="Thiago Brum" class="w-32 h-32 md:w-44 md:h-44 rounded-full object-cover">
                     </div>
                 </div>
-                
-                <div class="flex gap-6">
-                    <a href="https://www.linkedin.com/in/brum-thiago" target="_blank" class="text-2xl hover:text-sky-400 transition-colors"><i class="fab fa-linkedin text-sky-500"></i></a>
-                    <a href="mailto:thiago@brum.tec.br" class="text-2xl hover:text-sky-400 transition-colors"><i class="fas fa-envelope text-sky-500"></i></a>
+                <div class="flex gap-8">
+                    <a href="https://www.linkedin.com/in/brum-thiago" target="_blank" class="text-3xl hover:text-sky-400 transition-all hover:scale-110"><i class="fab fa-linkedin text-sky-500"></i></a>
+                    <a href="mailto:thiago@brum.tec.br" class="text-3xl hover:text-sky-400 transition-all hover:scale-110"><i class="fas fa-envelope text-sky-500"></i></a>
                 </div>
             </div>
 
             <div class="md:col-span-2 space-y-6">
                 <header>
-                    <h1 class="text-4xl font-bold glow-text mb-2">Thiago <span class="text-sky-500">Brum</span></h1>
+                    <h1 class="text-4xl font-bold mb-2 tracking-tight">Thiago <span class="text-sky-500">Brum</span></h1>
                     <div class="font-mono text-sky-400 text-sm flex items-center gap-2">
                         <span class="animate-pulse">></span> 
-                        <span>Cyber Security Engineer</span>
+                        <span>Cyber Security Engineer</span> [cite: 1, 12]
                     </div>
                 </header>
 
-                <p class="text-slate-400 leading-relaxed border-l-2 border-sky-500 pl-4">
-                    Especialista em Segurança da Informação. Atuação focada em Governança, Proteção de Dados Sensíveis e implementação de controles no Microsoft Purview.
+                <p class="text-slate-300 leading-relaxed border-l-4 border-sky-500 pl-4 bg-sky-950/20 py-2 rounded-r-lg">
+                    Especialista em Segurança da Informação. Atuação focada em Governança, Proteção de Dados Sensíveis e implementação de controles no Microsoft Purview. [cite: 3, 13]
                 </p>
 
-                <div class="bg-slate-900/50 p-5 rounded-xl border border-slate-700 font-mono text-xs md:text-sm">
-                    <span class="text-sky-500 block mb-3 font-bold flex items-center gap-2">
-                        <i class="fas fa-shield-alt"></i> CREDENTIALS_LOG:
-                    </span>
-                    <ul class="space-y-2 text-slate-300">
-                        <li><span class="text-sky-400">■</span> ISO 27001 Lead Auditor </li>
-                        <li><span class="text-sky-400">■</span> Microsoft SC-900 & AZ-900 </li>
-                        <li><span class="text-sky-400">■</span> CCST Ethical Hacker (Cisco) </li>
-                        <li><span class="text-sky-400">■</span> MBA Cibersegurança & Gestão de Riscos (2026) </li>
+                <div class="bg-slate-900/60 p-5 rounded-xl border border-sky-900/50 font-mono text-xs md:text-sm">
+                    <span class="text-sky-500 block mb-3 font-bold tracking-widest text-base">CREDENTIALS_LOG:</span>
+                    <ul class="space-y-3 text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-sky-500 text-[10px]"></i> ISO 27001 Lead Auditor [cite: 40]</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-sky-500 text-[10px]"></i> Microsoft SC-900 & AZ-900 [cite: 41]</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-sky-500 text-[10px]"></i> CCST Ethical Hacker (Cisco) [cite: 46]</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-sky-500 text-[10px]"></i> MBA Cibersegurança & Gestão de Riscos (2026) [cite: 6]</li>
                     </ul>
                 </div>
 
                 <div class="pt-4">
-                    <a href="mailto:thiago@brum.tec.br" class="inline-flex items-center gap-3 bg-sky-600 hover:bg-sky-500 text-white font-bold py-3 px-10 rounded-lg transition-all hover:scale-105 shadow-lg shadow-sky-500/20 uppercase tracking-widest text-sm">
+                    <a href="mailto:thiago@brum.tec.br" class="inline-flex items-center gap-4 bg-sky-600 hover:bg-sky-500 text-white font-bold py-4 px-12 rounded-lg transition-all hover:scale-105 active:scale-95 uppercase tracking-widest text-sm shadow-[0_0_20px_rgba(14,165,233,0.4)]">
                         <i class="fas fa-unlock-alt"></i> AUTHENTICATE ACCESS
                     </a>
                 </div>
             </div>
         </div>
 
-        <footer class="mt-16 pt-8 border-t border-slate-800 flex justify-between items-center text-[10px] font-mono text-slate-500 uppercase tracking-widest">
-            <div>IP_TRACKING: ENABLED</div>
-            <div class="text-sky-600">Secure Profile v2.1</div>
-            <div>Auth: 2FA_ACTIVE</div>
+        <footer class="mt-16 pt-8 border-t border-sky-900/30 flex justify-between items-center text-[10px] font-mono text-slate-500 uppercase tracking-widest">
+            <div class="flex items-center gap-1"><span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span> IP: LOGGED</div>
+            <div class="text-sky-800">Secure Profile v2.3</div>
+            <div>Status: Encrypted</div>
         </footer>
     </main>
 
