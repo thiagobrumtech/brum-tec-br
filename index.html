@@ -3,47 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <title>Thiago Brum | Segurança de Dados</title>
+
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0a0f1c;
-      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top, #0f172a, #020617);
+      color: #e2e8f0;
       text-align: center;
+      overflow-x: hidden;
     }
+
     .container {
-      padding: 60px 20px;
+      padding: 80px 20px;
     }
+
     h1 {
-      font-size: 2.5em;
+      font-size: 3em;
+      color: #38bdf8;
+      text-shadow: 0 0 10px #38bdf8, 0 0 20px #0ea5e9;
     }
-    p {
-      color: #aaa;
+
+    .subtitle {
+      font-size: 1.2em;
+      color: #94a3b8;
+      margin-bottom: 20px;
     }
+
+    .desc {
+      max-width: 600px;
+      margin: auto;
+      color: #cbd5f5;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
     .btn {
       display: inline-block;
       margin: 10px;
-      padding: 12px 20px;
-      background: #007bff;
+      padding: 14px 24px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #0ea5e9, #2563eb);
       color: white;
       text-decoration: none;
-      border-radius: 5px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px #0ea5e9;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #38bdf8, 0 0 40px #0ea5e9;
+    }
+
+    .footer {
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #64748b;
+    }
+
+    /* Glow animation background */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, #0ea5e9 0%, transparent 70%);
+      top: -200px;
+      left: -200px;
+      opacity: 0.15;
+      animation: moveGlow 10s infinite alternate;
+      z-index: -1;
+    }
+
+    @keyframes moveGlow {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(200px, 200px);
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h1>Thiago Brum</h1>
-    <p>Especialista em Segurança de Dados | DLP | Microsoft Purview</p>
 
-    <p>Protegendo dados sensíveis e reduzindo riscos com estratégias modernas.</p>
+    <div class="subtitle">
+      Especialista em Segurança de Dados | DLP | Microsoft Purview
+    </div>
 
-    <div>
+    <p class="desc">
+      Protegendo dados sensíveis e reduzindo riscos com estratégias modernas de Data Protection.
+    </p>
+
+    <div class="buttons">
       <a class="btn" href="https://www.linkedin.com/in/brum-thiago">LinkedIn</a>
       <a class="btn" href="https://www.youtube.com/@dronedothi">YouTube</a>
     </div>
 
-    <p style="margin-top:40px;">Atuando no setor financeiro</p>
+    <div class="footer">
+      Atuando no setor financeiro
+    </div>
   </div>
 </body>
 </html>
