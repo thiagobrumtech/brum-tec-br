@@ -9,16 +9,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { --cyber-blue: #0ea5e9; }
-        body { background-color: #020617; color: #f8fafc; font-family: 'Inter', sans-serif; position: relative; min-height: 100vh; overflow: hidden; }
+        body { background-color: #020617; color: #f8fafc; font-family: 'Inter', sans-serif; position: relative; min-height: 100vh; margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; overflow-x: hidden; }
         .font-mono { font-family: 'Fira Code', monospace; }
         
         /* Cartão Principal - Camada Superior */
         .glass { 
-            background: rgba(15, 23, 42, 0.9); 
+            background: rgba(15, 23, 42, 0.95); 
             backdrop-filter: blur(20px); 
             border: 1px solid rgba(14, 165, 233, 0.2); 
             position: relative;
             z-index: 20; 
+            width: 100%;
+            max-width: 900px;
         }
 
         .profile-ring { padding: 4px; background: linear-gradient(45deg, #0ea5e9, #6366f1); border-radius: 50%; }
@@ -26,13 +28,13 @@
         /* Linha de Scan - Camada Inferior (Background) */
         .scanline { 
             width: 100%; 
-            height: 10px;
-            background: linear-gradient(180deg, rgba(14, 165, 233, 0) 0%, rgba(14, 165, 233, 0.8) 50%, rgba(14, 165, 233, 0) 100%);
+            height: 4px;
+            background: linear-gradient(180deg, rgba(14, 165, 233, 0) 0%, rgba(14, 165, 233, 0.9) 50%, rgba(14, 165, 233, 0) 100%);
             position: fixed; 
             left: 0;
-            z-index: 10; /* Passa por trás do conteúdo */
+            z-index: 10;
             pointer-events: none;
-            box-shadow: 0 0 20px rgba(14, 165, 233, 0.6);
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.8);
             animation: scan 4s linear infinite;
         }
 
@@ -43,69 +45,76 @@
             top: 100%;
             left: 0;
             width: 100%;
-            height: 120px;
+            height: 15vh;
             background: linear-gradient(180deg, rgba(14, 165, 233, 0.2) 0%, rgba(14, 165, 233, 0) 100%);
         }
 
         @keyframes scan { 
-            0% { top: -150px; } 
-            100% { top: 110vh; } 
+            0% { top: -20vh; } 
+            100% { top: 120vh; } 
+        }
+
+        /* Ajustes Mobile Finos */
+        @media (max-width: 640px) {
+            .glass { margin: 20px; padding: 2.5rem 1.5rem; }
+            h1 { font-size: 1.875rem !important; }
         }
     </style>
 </head>
-<body class="flex items-center justify-center py-10 px-4">
+<body>
 
     <div class="scanline"></div>
 
-    <main class="glass max-w-4xl w-full rounded-2xl p-8 md:p-16 shadow-[0_0_60px_rgba(0,0,0,0.8)]">
-        <div class="grid md:grid-cols-3 gap-12 items-center">
+    <main class="glass rounded-3xl p-8 md:p-16 shadow-[0_0_80px_rgba(0,0,0,0.9)]">
+        <div class="flex flex-col md:flex-row gap-10 md:gap-16 items-center">
             
-            <div class="flex flex-col items-center space-y-6">
-                <div class="profile-ring">
+            <div class="flex flex-col items-center space-y-6 shrink-0">
+                <div class="profile-ring shadow-[0_0_30px_rgba(14,165,233,0.2)]">
                     <div class="bg-[#020617] rounded-full p-1 overflow-hidden">
-                        <img src="foto.png" alt="Thiago Brum" class="w-32 h-32 md:w-44 md:h-44 rounded-full object-cover">
+                        <img src="foto.png" alt="Thiago Brum" class="w-36 h-36 md:w-48 md:h-48 rounded-full object-cover block">
                     </div>
                 </div>
-                <div class="flex gap-8">
-                    <a href="https://www.linkedin.com/in/brum-thiago" target="_blank" class="text-3xl hover:text-sky-400 transition-all"><i class="fab fa-linkedin text-sky-500"></i></a>
-                    <a href="mailto:thiago@brum.tec.br" class="text-3xl hover:text-sky-400 transition-all"><i class="fas fa-envelope text-sky-500"></i></a>
+                <div class="flex gap-6 md:gap-8">
+                    <a href="https://www.linkedin.com/in/brum-thiago" target="_blank" class="text-3xl hover:text-sky-400 transition-transform hover:scale-110" title="LinkedIn"><i class="fab fa-linkedin text-sky-500"></i></a>
+                    <a href="https://www.instagram.com/thiagobr1.security" target="_blank" class="text-3xl hover:text-pink-500 transition-transform hover:scale-110" title="Instagram"><i class="fab fa-instagram text-sky-500 hover:text-pink-500"></i></a>
+                    <a href="mailto:thiago@brum.tec.br" class="text-3xl hover:text-sky-400 transition-transform hover:scale-110" title="E-mail"><i class="fas fa-envelope text-sky-500"></i></a>
                 </div>
             </div>
 
-            <div class="md:col-span-2 space-y-6">
+            <div class="space-y-6 w-full text-center md:text-left">
                 <header>
-                    <h1 class="text-4xl font-bold mb-2 tracking-tight">Thiago <span class="text-sky-500">Brum</span></h1>
-                    <div class="font-mono text-sky-400 text-sm flex items-center gap-2">
+                    <h1 class="text-3xl md:text-5xl font-bold mb-2 tracking-tight">Thiago <span class="text-sky-500">Brum</span></h1>
+                    <div class="font-mono text-sky-400 text-sm md:text-base flex items-center justify-center md:justify-start gap-2">
                         <span class="animate-pulse">></span> 
                         <span>Cyber Security Engineer</span>
                     </div>
                 </header>
 
-                <p class="text-slate-300 leading-relaxed border-l-4 border-sky-500 pl-4 py-1">
+                <p class="text-slate-300 leading-relaxed border-l-0 md:border-l-4 border-sky-500 pl-0 md:pl-4 py-1 text-sm md:text-base">
                     Especialista em Segurança da Informação. Atuação focada em Governança, Proteção de Dados Sensíveis e implementação de controles no Microsoft Purview.
                 </p>
 
-                <div class="bg-slate-950/80 p-5 rounded-xl border border-sky-900/50 font-mono text-xs md:text-sm">
+                <div class="bg-slate-950/80 p-5 rounded-2xl border border-sky-900/40 font-mono text-[11px] md:text-sm text-left mx-auto md:mx-0 max-w-sm md:max-w-none">
                     <span class="text-sky-500 block mb-3 font-bold tracking-widest uppercase">Credentials_Log:</span>
                     <ul class="space-y-2 text-slate-300">
-                        <li><i class="fas fa-shield-alt text-sky-500 mr-2"></i> ISO 27001 Lead Auditor</li>
-                        <li><i class="fas fa-shield-alt text-sky-500 mr-2"></i> Microsoft SC-900 & AZ-900</li>
-                        <li><i class="fas fa-shield-alt text-sky-500 mr-2"></i> CCST Ethical Hacker (Cisco)</li>
-                        <li><i class="fas fa-shield-alt text-sky-500 mr-2"></i> MBA Cibersegurança & Gestão de Riscos (2026)</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-shield-alt text-sky-500 mt-1"></i> <span>ISO 27001 Lead Auditor</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-shield-alt text-sky-500 mt-1"></i> <span>Microsoft SC-900 & AZ-900</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-shield-alt text-sky-500 mt-1"></i> <span>CCST Ethical Hacker (Cisco)</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-shield-alt text-sky-500 mt-1"></i> <span>MBA Cibersegurança & Gestão de Riscos (2026)</span></li>
                     </ul>
                 </div>
 
-                <div class="pt-4">
-                    <a href="mailto:thiago@brum.tec.br" class="inline-flex items-center gap-4 bg-sky-600 hover:bg-sky-500 text-white font-bold py-4 px-12 rounded-lg transition-all hover:scale-105 active:scale-95 uppercase tracking-widest text-sm shadow-lg shadow-sky-500/20">
+                <div class="pt-4 flex justify-center md:justify-start">
+                    <a href="mailto:thiago@brum.tec.br" class="inline-flex items-center gap-4 bg-sky-600 hover:bg-sky-500 text-white font-bold py-4 px-8 md:px-12 rounded-xl transition-all hover:scale-105 active:scale-95 uppercase tracking-widest text-xs md:text-sm shadow-xl shadow-sky-500/20">
                         <i class="fas fa-lock"></i> Authenticate Access
                     </a>
                 </div>
             </div>
         </div>
 
-        <footer class="mt-16 pt-8 border-t border-sky-900/30 flex justify-between items-center text-[10px] font-mono text-slate-500 uppercase tracking-widest">
-            <div><span class="inline-block w-2 h-2 bg-green-500 rounded-full animate-ping mr-2"></span>Node_Active</div>
-            <div class="text-sky-800 italic">Secure Profile v2.5</div>
+        <footer class="mt-12 md:mt-16 pt-8 border-t border-sky-900/30 flex flex-col md:flex-row justify-between items-center gap-4 text-[9px] md:text-[10px] font-mono text-slate-500 uppercase tracking-widest">
+            <div class="flex items-center gap-2"><span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>NODE_ACTIVE</div>
+            <div class="text-sky-800 italic">Secure Profile v2.7 // 2026</div>
             <div>Auth_Level: Admin</div>
         </footer>
     </main>
