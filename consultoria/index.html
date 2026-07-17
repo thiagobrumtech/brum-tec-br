@@ -1,1 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoria TBT | Thiago Brum Tech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --bg-principal: #0D0D0D; 
+            --bg-card: #1A1A1A;
+            --dourado-premium: #D4AF37; 
+        }
+        body { 
+            background-color: var(--bg-principal); 
+            color: #FFFFFF; 
+            font-family: 'Inter', sans-serif; 
+        }
+        .gold-gradient-border {
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+        .gold-gradient-border:hover {
+            border-color: var(--dourado-premium);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+        }
+        .btn-gold {
+            background-color: var(--dourado-premium);
+            color: #0D0D0D;
+            transition: all 0.3s ease;
+        }
+        .btn-gold:hover {
+            background-color: #f1c40f;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+        }
+        /* Linha de Scan sutil em Dourado passando ao fundo */
+        .scanline { 
+            width: 100%; 
+            height: 4px;
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0) 0%, rgba(212, 175, 55, 0.4) 50%, rgba(212, 175, 55, 0) 100%);
+            position: fixed; 
+            left: 0;
+            z-index: 10;
+            pointer-events: none;
+            animation: scan 6s linear infinite;
+        }
+        @keyframes scan { 0% { top: -10vh; } 100% { top: 110vh; } }
+    </style>
+</head>
+<body class="relative min-h-screen">
 
+    <div class="scanline"></div>
+
+    <!-- Container Geral -->
+    <div class="relative z-20 max-w-6xl mx-auto px-4 py-12 md:py-20">
+        
+        <!-- Header / Logo -->
+        <header class="text-center mb-16">
+            <div class="inline-block text-xl md:text-2xl font-bold tracking-[0.3em] text-white border-b-2 border-[#D4AF37] pb-3 uppercase font-mono">
+                THIAGO <span class="text-[#D4AF37]">BRUM</span> TECH
+            </div>
+            <p class="text-xs text-slate-400 tracking-[0.5em] uppercase mt-3">Segurança • Dados • Tecnologia</p>
+            <h1 class="text-3xl md:text-5xl font-bold mt-8 tracking-tight">Catálogo de Serviços e <span class="text-[#D4AF37]">Consultoria</span></h1>
+        </header>
+
+        <!-- Grid de Categorias -->
+        <div class="grid md:grid-cols-2 gap-8">
+            
+            <!-- 01. E-mail Profissional -->
+            <div class="gold-gradient-border bg-[#1A1A1A] p-6 md:p-8 rounded-2xl">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="text-[#D4AF37] text-2xl"><i class="fas fa-envelope-open-text"></i></div>
+                    <h2 class="text-xl font-bold tracking-wide uppercase text-slate-100">E-mail Profissional</h2>
+                </div>
+                <ul class="space-y-4 text-sm text-slate-400">
+                    <li><strong class="text-slate-200">01. Registro de domínio:</strong> Garanta um endereço exclusivo para sua empresa e fortaleça sua marca na internet.</li>
+                    <li><strong class="text-slate-200">02. Renovação de domínio:</strong> Mantenha seu domínio ativo e evite interrupções na sua presença digital.</li>
+                    <li><strong class="text-slate-200">03. Criação de e-mail profissional:</strong> Transmita mais confiança e credibilidade em cada contato.</li>
+                    <li><strong class="text-slate-200">04. Configuração do Gmail:</strong> Utilize seu e-mail profissional na interface do Gmail, de forma prática e segura.</li>
+                </ul>
+            </div>
+
+            <!-- 02. Presença Digital -->
+            <div class="gold-gradient-border bg-[#1A1A1A] p-6 md:p-8 rounded-2xl">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="text-[#D4AF37] text-2xl"><i class="fas fa-globe"></i></div>
+                    <h2 class="text-xl font-bold tracking-wide uppercase text-slate-100">Presença Digital</h2>
+                </div>
+                <ul class="space-y-4 text-sm text-slate-400">
+                    <li><strong class="text-slate-200">05. Assinatura profissional de e-mail:</strong> Fortaleça sua identidade em todos os e-mails enviados.</li>
+                    <li><strong class="text-slate-200">06. Cartão digital:</strong> Compartilhe seus contatos de forma moderna, prática e profissional.</li>
+                    <li><strong class="text-slate-200">07. Página de apresentação (Link na Bio):</strong> Reúna suas principais informações e canais de contato em um único lugar.</li>
+                </ul>
+            </div>
+
+            <!-- 03. Administração -->
+            <div class="gold-gradient-border bg-[#1A1A1A] p-6 md:p-8 rounded-2xl">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="text-[#D4AF37] text-2xl"><i class="fas fa-sliders-h"></i></div>
+                    <h2 class="text-xl font-bold tracking-wide uppercase text-slate-100">Administração de Serviços</h2>
+                </div>
+                <ul class="space-y-4 text-sm text-slate-400">
+                    <li><strong class="text-slate-200">08. Criação de novas caixas:</strong> Organize sua comunicação com endereços específicos para cada necessidade.</li>
+                    <li><strong class="text-slate-200">09. Migração de e-mails:</strong> Transfira suas mensagens para o novo endereço sem perder informações importantes.</li>
+                    <li><strong class="text-slate-200">10. Cloudflare Email Routing:</strong> Direcione seus e-mails com segurança e eficiência utilizando a infraestrutura da Cloudflare.</li>
+                </ul>
+            </div>
+
+            <!-- 04. Suporte -->
+            <div class="gold-gradient-border bg-[#1A1A1A] p-6 md:p-8 rounded-2xl">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="text-[#D4AF37] text-2xl"><i class="fas fa-tools"></i></div>
+                    <h2 class="text-xl font-bold tracking-wide uppercase text-slate-100">Suporte Especializado</h2>
+                </div>
+                <ul class="space-y-4 text-sm text-slate-400">
+                    <li><strong class="text-slate-200">11. Suporte e manutenção:</strong> Conte com assistência para manter seu e-mail funcionando corretamente.</li>
+                    <li><strong class="text-slate-200">12. Gestão anual:</strong> Deixe a administração técnica do domínio e e-mails conosco e foque no crescimento do seu negócio.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Bloco Único de Destaque: Cyber Segurança & LGPD -->
+        <div class="mt-8 gold-gradient-border bg-gradient-to-br from-[#1A1A1A] to-[#0D0D0D] p-6 md:p-10 rounded-2xl border-l-4 border-l-[#D4AF37]">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="text-[#D4AF37] text-3xl"><i class="fas fa-shield-alt"></i></div>
+                <h2 class="text-2xl font-bold tracking-wide uppercase text-white">🔒 Cyber Segurança & Proteção de Dados</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 text-sm text-slate-400">
+                <ul class="space-y-4">
+                    <li><strong class="text-slate-200">14. Consultoria em Proteção de Dados:</strong> Oriente sua empresa sobre boas práticas para proteger informações e dados dos clientes.</li>
+                    <li><strong class="text-slate-200">15. Adequação Básica à LGPD:</strong> Implemente medidas iniciais para aumentar a conformidade com a Lei Geral de Proteção de Dados.</li>
+                    <li><strong class="text-slate-200">17. Treinamento contra Golpes:</strong> Aprenda a reconhecer tentativas de fraude e proteger sua empresa contra engenharia social por e-mail.</li>
+                </ul>
+                <ul class="space-y-4">
+                    <li><strong class="text-slate-200">18. Boas Práticas de Segurança:</strong> Adote medidas simples e eficazes para reduzir riscos no ambiente digital.</li>
+                    <li><strong class="text-slate-200">21. Política de Senhas:</strong> Defina regras para criação, armazenamento e gerenciamento seguro de senhas na empresa.</li>
+                    <li><strong class="text-slate-200">22. Uso de E-mail Corporativo:</strong> Diretrizes para o uso adequado do e-mail profissional, reduzindo riscos e vazamentos.</li>
+                    <li><strong class="text-slate-200">23. Conscientização em Segurança:</strong> Capacite colaboradores para identificar ameaças e adotar práticas seguras.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Seção de Ação (CTA) em conformidade com o Folder institucional -->
+        <div class="text-center mt-16 max-w-md mx-auto">
+            <p class="text-slate-400 text-sm mb-6">Precisa proteger os ativos da sua empresa e estruturar sua governança digital?</p>
+            <a href="mailto:thiago@brum.tec.br?subject=Solicitação de Diagnóstico Técnico" 
+               class="btn-gold inline-flex items-center justify-center gap-3 w-full font-bold py-4 px-8 rounded-full uppercase text-sm tracking-widest">
+                <i class="fas fa-comments"></i> SOLICITE UM DIAGNÓSTICO
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-20 pt-8 border-t border-slate-900 text-center text-[10px] font-mono text-slate-600 tracking-widest uppercase">
+            © 2026 THIAGO BRUM TECH // TECNOLOGIA • SEGURANÇA • CONFIANÇA
+        </footer>
+
+    </div>
+
+</body>
+</html>
